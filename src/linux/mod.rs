@@ -5,7 +5,7 @@ pub static ARM_FEATURES_H: &str = include_str!("arm-features.h");
 
 // fcntl.map
 pub static FCNTL_MAP: &str = r#"
-GLIBC_2.2.5 {
+GLIBC_2.4 {
     fcntl;
 };
 "#;
@@ -13,8 +13,8 @@ GLIBC_2.2.5 {
 // fnctl.h shim
 pub static FCNTL_H: &str = r#"
 #ifdef __ASSEMBLER__
-.symver fcntl64, fcntl@GLIBC_2.2.5
+.symver fcntl64, fcntl@GLIBC_2.4
 #else
-__asm__(".symver fcntl64, fcntl@GLIBC_2.2.5");
+__asm__(".symver fcntl64, fcntl@GLIBC_2.4");
 #endif
 "#;
