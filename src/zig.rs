@@ -947,7 +947,7 @@ pub fn prepare_zig_linker(target: &str) -> Result<ZigWrapper> {
                     _ => ("arm", ""),
                 },
                 "armv5te" => ("arm", "-mcpu=generic+soft_float+strict_align"),
-                "armv7" => ("arm", "-mcpu=generic+v7a+vfp3-d32+thumb2-neon"),
+                "armv7" => ("arm", "-mcpu=cortex_a8"),
                 arch_str @ ("i586" | "i686") => {
                     let cpu_arg = if arch_str == "i586" {
                         "-mcpu=pentium"
